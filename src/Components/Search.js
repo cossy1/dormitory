@@ -32,7 +32,13 @@ function Search({handleAdd, setName, setDate }) {
 					}} />
 				</div>
 			</label>
-			<button type="button" data-testid="addBtn" className="small mb-0" onClick={handleAdd}>Add</button>
+			<button type="button" data-testid="addBtn" className="small mb-0" onClick={() => {
+				handleAdd();
+				const name = document.getElementById('studentName');
+				const date = document.getElementById('joiningDate');
+				name.value = '';
+				date.value = '';
+			}}>Add</button>
 		</div>
 	);
 }
